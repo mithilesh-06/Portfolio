@@ -4,13 +4,13 @@ body {
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
-    background: #f8f9fa; /* Light background for readability */
+    background: #f8f9fa;
 }
 
 /* Hero Section */
 #hero {
     background: black;
-    height: 30vh; /* Reduced space */
+    height: 30vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -20,37 +20,41 @@ body {
 .hero-container {
     display: flex;
     align-items: center;
-    gap: 10px; /* Reduced gap */
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 .profile-photo {
     pointer-events: none;
     -webkit-user-drag: none;
-    width: 160px; /* Reduced size */
+    width: 160px;
     border-radius: 50%;
 }
 .name-container {
     display: flex;
     flex-direction: column;
+    text-align: center;
 }
 .static-name {
     color: white;
-    font-size: 28px; /* Reduced */
+    font-size: 28px;
     font-weight: bold;
 }
 .subtitle {
     color: white;
-    font-size: 16px; /* Slightly smaller */
+    font-size: 16px;
     margin-top: 5px;
-    max-width: 700px; /* Ensures it doesn’t stretch too much */
+    max-width: 700px;
 }
+
 /* Personal Information */
 #personal-info {
     background: white;
     text-align: center;
-    padding: 50px 30px;
+    padding: 50px 5%;
 }
 .section-header {
-    background-color: #222; /* Dark background for heading */
+    background-color: #222;
     color: white;
     font-size: 24px;
     font-weight: bold;
@@ -69,7 +73,7 @@ body {
 #learning-experience {
     background: black;
     text-align: center;
-    padding: 60px 40px;
+    padding: 60px 5%;
     color: white;
 }
 .experience-container {
@@ -90,11 +94,14 @@ body {
 .experience-card:hover {
     transform: scale(1.1);
 }
+
 /* Social Links */
 .social-links {
     margin-top: 15px;
     display: flex;
     gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 .social-links a img {
     -webkit-user-drag: none;
@@ -106,12 +113,11 @@ body {
     transform: scale(1.2);
 }
 
-
 /* Certifications */
 #certifications {
     background: white;
     text-align: center;
-    padding: 60px 40px;
+    padding: 60px 5%;
 }
 .certifications-container {
     display: flex;
@@ -121,9 +127,10 @@ body {
 }
 .cert-card {
     background: #f5f5f5;
-    padding: px;
+    padding: 10px;
     width: 200px;
     text-align: center;
+    border-radius: 8px;
 }
 .cert-card img {
     pointer-events: none;
@@ -136,11 +143,12 @@ body {
 #area-of-interest {
     background: black;
     text-align: center;
-    padding: 60px 40px;
+    padding: 60px 5%;
     color: white;
 }
 .interests-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
 }
@@ -151,4 +159,52 @@ body {
     border-radius: 5px;
     font-weight: bold;
     font-size: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #hero {
+        height: auto;
+        padding: 30px 0;
+    }
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .profile-photo {
+        width: 120px;
+    }
+    .static-name {
+        font-size: 24px;
+    }
+    .subtitle {
+        font-size: 14px;
+        max-width: 90%;
+    }
+    .experience-container, .certifications-container, .interests-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .experience-card, .cert-card {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .static-name {
+        font-size: 22px;
+    }
+    .subtitle {
+        font-size: 13px;
+    }
+    .profile-photo {
+        width: 100px;
+    }
+    .social-links a img {
+        width: 40px;
+        height: 40px;
+    }
+    .experience-card, .cert-card {
+        width: 100%;
+    }
 }
