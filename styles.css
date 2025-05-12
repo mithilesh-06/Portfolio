@@ -1,210 +1,159 @@
-/* General Styles */
-body {
-    font-family: 'Poppins', sans-serif;
+/* Reset and Base Styles */
+* {
     margin: 0;
     padding: 0;
-    scroll-behavior: smooth;
-    background: #f8f9fa;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #111;
+    color: #f1f1f1;
+    display: flex;
+}
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
-/* Hero Section */
-#hero {
-    background: black;
-    height: 30vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 20px 0;
-}
-.hero-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-.profile-photo {
-    pointer-events: none;
-    -webkit-user-drag: none;
-    width: 160px;
-    border-radius: 50%;
-}
-.name-container {
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background: #1a1a1a;
+    min-height: 100vh;
+    padding: 30px 20px;
+    position: fixed;
     display: flex;
     flex-direction: column;
+    align-items: center;
     text-align: center;
 }
-.static-name {
-    color: white;
-    font-size: 28px;
-    font-weight: bold;
-}
-.subtitle {
-    color: white;
-    font-size: 16px;
-    margin-top: 5px;
-    max-width: 700px;
-}
-
-/* Personal Information */
-#personal-info {
-    background: white;
-    text-align: center;
-    padding: 50px 5%;
-}
-.section-header {
-    background-color: #222;
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
-    text-align: center;
-    padding: 10px;
-    border-radius: 5px;
+.profile-pic img {
+    width: 100px;
+    border-radius: 50%;
     margin-bottom: 20px;
 }
-#personal-info p {
-    font-size: 18px;
-    color: #523d3d;
-    line-height: 1.6;
+.sidebar h2 {
+    margin-bottom: 30px;
+    font-size: 20px;
 }
-
-/* Learning Experience */
-#learning-experience {
-    background: black;
-    text-align: center;
-    padding: 60px 5%;
-    color: white;
+.sidebar ul {
+    list-style: none;
+    width: 100%;
 }
-.experience-container {
+.sidebar ul li {
+    margin: 15px 0;
+}
+.sidebar ul li a {
+    color: #ccc;
+    transition: color 0.3s;
+}
+.sidebar ul li a:hover {
+    color: #fff;
+}
+.social-icons {
+    margin-top: auto;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    gap: 15px;
 }
-.experience-card {
-    background: #222;
-    padding: 20px;
-    width: 280px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
-    text-align: center;
-    transition: transform 0.3s ease-in-out;
+.social-icons img {
+    width: 30px;
+    filter: brightness(0.9);
+    transition: transform 0.3s;
 }
-.experience-card:hover {
+.social-icons img:hover {
     transform: scale(1.1);
 }
 
-/* Social Links */
-.social-links {
-    margin-top: 15px;
+/* Main Content */
+.main-content {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    padding: 40px;
+}
+.section {
+    margin-bottom: 80px;
+}
+.section h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    border-left: 5px solid #00ffff;
+    padding-left: 10px;
+}
+.section p {
+    line-height: 1.8;
+    margin-bottom: 15px;
+    color: #ccc;
+}
+
+/* Cards */
+.card-container {
     display: flex;
-    gap: 15px;
-    justify-content: center;
     flex-wrap: wrap;
+    gap: 20px;
 }
-.social-links a img {
-    -webkit-user-drag: none;
-    width: 50px;
-    height: 50px;
-    transition: transform 0.3s ease-in-out;
+.card {
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1 1 250px;
+    transition: transform 0.3s ease;
 }
-.social-links a img:hover {
-    transform: scale(1.2);
+.card:hover {
+    transform: translateY(-5px);
 }
 
 /* Certifications */
-#certifications {
-    background: white;
-    text-align: center;
-    padding: 60px 5%;
-}
-.certifications-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     gap: 20px;
 }
-.cert-card {
-    background: #f5f5f5;
-    padding: 10px;
-    width: 200px;
+.cert-grid div {
     text-align: center;
-    border-radius: 8px;
+    background: #222;
+    border-radius: 10px;
+    padding: 10px;
 }
-.cert-card img {
-    pointer-events: none;
-    -webkit-user-drag: none;
+.cert-grid img {
     width: 100%;
     border-radius: 10px;
+    pointer-events: none;
+}
+.cert-grid p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #aaa;
 }
 
-/* Area of Interest */
-#area-of-interest {
-    background: black;
-    text-align: center;
-    padding: 60px 5%;
-    color: white;
-}
-.interests-container {
+/* Interests */
+.interest-tags {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     gap: 15px;
+    flex-wrap: wrap;
 }
-.interest {
-    padding: 10px 20px;
-    background: white;
-    color: black;
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 16px;
+.interest-tags span {
+    background: #00ffff;
+    color: #000;
+    padding: 10px 15px;
+    border-radius: 30px;
+    font-weight: 600;
 }
 
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 768px) {
-    #hero {
-        height: auto;
-        padding: 30px 0;
-    }
-    .hero-container {
-        flex-direction: column;
-        text-align: center;
-    }
-    .profile-photo {
-        width: 120px;
-    }
-    .static-name {
-        font-size: 24px;
-    }
-    .subtitle {
-        font-size: 14px;
-        max-width: 90%;
-    }
-    .experience-container, .certifications-container, .interests-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    .experience-card, .cert-card {
-        width: 90%;
-    }
-}
-
-@media (max-width: 480px) {
-    .static-name {
-        font-size: 22px;
-    }
-    .subtitle {
-        font-size: 13px;
-    }
-    .profile-photo {
-        width: 100px;
-    }
-    .social-links a img {
-        width: 40px;
-        height: 40px;
-    }
-    .experience-card, .cert-card {
+    .sidebar {
+        position: static;
         width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+        padding: 20px;
+    }
+    .section h1 {
+        font-size: 24px;
     }
 }
